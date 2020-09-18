@@ -11,7 +11,7 @@ function App() {
   const [allMemeImgs, setAllMemeImgs] = useState([]);
   //
   const [upperTxt, setUpperTxt] = useState('stretch goals');
-  const [lowerTxt, setLowerTxt] = useState('it' + "'" + 's a trap');
+  const [lowerTxt, setLowerTxt] = useState(`it's a trap`);
   //
   const handleSubmit = (e) => {
     e.preventDefault();
