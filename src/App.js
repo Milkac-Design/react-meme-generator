@@ -5,11 +5,13 @@ import './App.css';
 //axios is getting the link, need to find the way to randomize the number
 
 function App() {
-  const [memes, setMemes] = useState('');
+  const [memes, setMemes] = useState(
+    'https://api.memegen.link/images/bender.jpg',
+  );
   const [allMemeImgs, setAllMemeImgs] = useState([]);
   //
-  const [upperTxt, setUpperTxt] = useState('');
-  const [lowerTxt, setLowerTxt] = useState('');
+  const [upperTxt, setUpperTxt] = useState('Upper Text');
+  const [lowerTxt, setLowerTxt] = useState('Lower Text');
   //
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -40,24 +42,36 @@ function App() {
   };
   return (
     <div className="outter-box">
-      <div>
-        <form onSubmit={handleSubmit}>
-          <button className="button">Random Meme</button>
-          <lable className="text-box">
-            Upper text:
-            <input type="text" onChange={(e) => setUpperTxt(e.target.value)} />
-          </lable>
-          <lable>
-            Lower text:
-            <input type="text" onChange={(e) => setLowerTxt(e.target.value)} />
-          </lable>
-        </form>
-      </div>
-      <div>
-        <img src={`${memes.slice(0, -4)}/${upperTxt}/${lowerTxt}.png`} alt="" />
-      </div>
-      <div>
-        <button onClick={download}>Download Meme</button>
+      <div className="inner-box">
+        <h1>Meme Generator</h1>
+        <div>
+          <form onSubmit={handleSubmit}>
+            <button className="button">Random Meme</button>
+            <lable className="text-box">
+              Upper text:
+              <input
+                type="text"
+                onChange={(e) => setUpperTxt(e.target.value)}
+              />
+            </lable>
+            <lable>
+              Lower text:
+              <input
+                type="text"
+                onChange={(e) => setLowerTxt(e.target.value)}
+              />
+            </lable>
+          </form>
+        </div>
+        <div className="meme">
+          <img
+            src={`${memes.slice(0, -4)}/${upperTxt}/${lowerTxt}.png`}
+            alt=""
+          />
+        </div>
+        <div className="download">
+          <button onClick={download}>Download Meme</button>
+        </div>
       </div>
     </div>
   );

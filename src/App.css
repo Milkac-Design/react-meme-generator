@@ -1,13 +1,39 @@
 body {
   background: aliceblue;
+  width: 100vw;
+}
+h1 {
+  margin-left: 10px;
 }
 .outter-box {
   width: 80%;
-  margin: 30px;
+  margin-left: 18vw;
+  margin-top: 20px;
 }
+.inner-box {
+  width: 80%;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
 .button {
-  margin: 0px 5px 20px 0px;
+  margin: 0px 5px 20px 10px;
 }
 .text-box {
   margin: 0px 5px 20px 5px;
+}
+.meme {
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+  justify-content: center;
+}
+.meme > img {
+  max-width: 60%;
+  max-height: 60vh;
+}
+.download {
+  margin: 20px 0px 10px 10px;
+  display: flex;
+  justify-content: center;
 }
