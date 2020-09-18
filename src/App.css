@@ -1,39 +1,90 @@
 body {
-  background: aliceblue;
   width: 100vw;
 }
-h1 {
-  margin-left: 10px;
-}
+
 .outter-box {
   width: 80%;
   margin-left: 18vw;
   margin-top: 20px;
 }
+.text-line {
+  display: flex;
+  justify-content: center;
+}
+.text-line button {
+  height: 30px;
+}
 .inner-box {
   width: 80%;
-  border: 2px solid;
+  background: aliceblue;
+  border: 3px solid;
   border-radius: 10px;
+  text-align: center;
 }
 
 .button {
-  margin: 0px 5px 20px 10px;
+  margin: 0px 5px 20px 0px;
+  border: 1.5px solid#3b3d3d;
+  border-radius: 10px;
+  margin: 20px 20px 20px 20px;
+  color: #3b3d3d;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.7em;
+  letter-spacing: 0.6px;
+}
+.button:hover {
+  background: #03adad;
+  transition: all 0.85s ease-Out;
 }
 .text-box {
   margin: 0px 5px 20px 5px;
+}
+.side-button {
+  height: 50px;
+  width: 140px;
+  border: 2px solid#3b3d3d;
+  border-radius: 10px;
+  margin: 20px 20px 20px 20px;
+  color: #3b3d3d;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+.side-button:hover {
+  background: #03adad;
+  transition: all 0.85s ease-Out;
 }
 .meme {
   width: 100%;
   object-fit: cover;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .meme > img {
   max-width: 60%;
-  max-height: 60vh;
+  max-height: 50vh;
 }
 .download {
   margin: 20px 0px 10px 10px;
   display: flex;
   justify-content: center;
+}
+.download button {
+  height: 50px;
+  width: 150px;
+  border: 2px solid#3b3d3d;
+  border-radius: 10px;
+  margin: 20px 20px 20px 20px;
+  color: #3b3d3d;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+.download button:hover {
+  background: #03adad;
+  transition: all 0.85s ease-Out;
 }

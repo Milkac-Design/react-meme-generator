@@ -6,18 +6,25 @@ import './App.css';
 
 function App() {
   const [memes, setMemes] = useState(
-    'https://api.memegen.link/images/bender.jpg',
+    'https://api.memegen.link/images/ackbar.jpg',
   );
   const [allMemeImgs, setAllMemeImgs] = useState([]);
   //
-  const [upperTxt, setUpperTxt] = useState('Upper Text');
-  const [lowerTxt, setLowerTxt] = useState('Lower Text');
+  const [upperTxt, setUpperTxt] = useState('stretch goals');
+  const [lowerTxt, setLowerTxt] = useState('it' + "'" + 's a trap');
   //
   const handleSubmit = (e) => {
     e.preventDefault();
     const randNum = Math.floor(Math.random() * allMemeImgs.length);
     const randMemeImgUrl = allMemeImgs[randNum].blank;
     setMemes(randMemeImgUrl);
+  };
+  //
+  const [count, setCount] = useState(0);
+  //
+  const nextMeme = () => {
+    const memeUrl = allMemeImgs[count].blank;
+    setMemes(memeUrl);
   };
   //
   useEffect(() => {
@@ -44,7 +51,7 @@ function App() {
     <div className="outter-box">
       <div className="inner-box">
         <h1>Meme Generator</h1>
-        <div>
+        <div className="text-line">
           <form onSubmit={handleSubmit}>
             <button className="button">Random Meme</button>
             <lable className="text-box">
@@ -64,13 +71,32 @@ function App() {
           </form>
         </div>
         <div className="meme">
+          <button
+            className="side-button"
+            onClick={(e) => {
+              setCount(count - 1);
+              nextMeme();
+            }}
+            disabled={count <= 0}
+          >
+            Previous meme
+          </button>
           <img
             src={`${memes.slice(0, -4)}/${upperTxt}/${lowerTxt}.png`}
             alt=""
           />
+          <button
+            className="side-button"
+            onClick={(e) => {
+              setCount(count + 1);
+              nextMeme();
+            }}
+          >
+            Next meme
+          </button>
         </div>
         <div className="download">
-          <button onClick={download}>Download Meme</button>
+          <button onClickonClick={download}>Download Meme</button>
         </div>
       </div>
     </div>
