@@ -23,12 +23,27 @@ function App() {
       setAllMemeImgs(res.data);
     });
   }, []);
+  //
+  const download = () => {
+    axios({
+      url: `${memes.slice(0, -4)}/${upperTxt}/${lowerTxt}.png`,
+      method: 'GET',
+      responseType: 'blob',
+    }).then((response) => {
+      const url = window.URL.createObjectURL(new Blob([response.data]));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'meme.png');
+      document.body.appendChild(link);
+      link.click();
+    });
+  };
   return (
-    <div>
+    <div className="outter-box">
       <div>
         <form onSubmit={handleSubmit}>
-          <button>Random Meme</button>
-          <lable>
+          <button className="button">Random Meme</button>
+          <lable className="text-box">
             Upper text:
             <input type="text" onChange={(e) => setUpperTxt(e.target.value)} />
           </lable>
@@ -40,6 +55,9 @@ function App() {
       </div>
       <div>
         <img src={`${memes.slice(0, -4)}/${upperTxt}/${lowerTxt}.png`} alt="" />
+      </div>
+      <div>
+        <button onClick={download}>Download Meme</button>
       </div>
     </div>
   );

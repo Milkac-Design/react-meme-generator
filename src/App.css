@@ -1,3 +1,13 @@
 body {
   background: aliceblue;
 }
+.outter-box {
+  width: 80%;
+  margin: 30px;
+}
+.button {
+  margin: 0px 5px 20px 0px;
+}
+.text-box {
+  margin: 0px 5px 20px 5px;
+}
