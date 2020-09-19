@@ -42,7 +42,7 @@ function App() {
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', 'meme.png');
+      link.setAttribute('download', `${upperTxt}.png`);
       document.body.appendChild(link);
       link.click();
     });
@@ -96,7 +96,7 @@ function App() {
           </button>
         </div>
         <div className="download">
-          <button onClickonClick={download}>Download Meme</button>
+          <button onClick={download}>Download Meme</button>
         </div>
       </div>
     </div>
